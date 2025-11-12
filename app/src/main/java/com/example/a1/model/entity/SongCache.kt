@@ -1,0 +1,15 @@
+package com.example.a1.model.entity
+
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import retrofit2.http.Url
+
+@Entity(tableName = "song_cache")
+data class SongCache(
+    @PrimaryKey
+    val songApiId: String,
+    val titulo: String,
+    val artista: String,
+    val urlCapa: String,
+    val urlAudio: String
+)
