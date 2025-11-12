@@ -1,4 +1,4 @@
-package com.example.a1.dao
+package com.example.a1.model.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
@@ -17,7 +17,7 @@ interface MusicDao {
     @Query("SELECT * FROM playlists ORDER BY nome ASC")
     fun getAllPlaylists(): Flow<List<Playlist>>
 
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    @Insert(onConflict = OnConflictStrategy.Companion.IGNORE)
     suspend fun insertSong(song: SongCache)
 
     @Query("SELECT * FROM song_cache WHERE songApiId = :id")
